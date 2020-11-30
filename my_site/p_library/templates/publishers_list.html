@@ -1,0 +1,33 @@
+{% load pub_books %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publishers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <p>В моей коллекции собраны книги следующих издательств:</p>    
+    <ul class="list-group">
+        {% for pub in publishers %}
+        <li class="list-group-item">
+            <p>{{ pub.title }} ({{ pub|count_books }}):</p>
+            <ul class="list-group">
+                {% for book in pub.books.all %}
+                <li class="list-group-item">
+                    {{ book.title }}, {{ book.author }}
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
