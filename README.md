@@ -18,7 +18,7 @@ python manage.py runserver
 ![Books](/preview_images/lib.png)
   
 По пути **/publishers** отображается список всех издательств, которые есть в базе.  
-По пути **/borrowed-books** отображается список всех книг, которые одолжили друзья.  
+По пути **/borrowed_books** отображается список всех книг, которые одолжили друзья.  
 
 ![Friends](/preview_images/friends.png)
 
