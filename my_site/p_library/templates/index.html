@@ -29,12 +29,12 @@
                 <form action="/index/book_increment/" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{book.id}}" />
-                    <input class="count-input" type="submit" value="Увеличить кол-во" />
+                    <input class="mt-1 mb-1" type="submit" value="Увеличить кол-во" />
                 </form>
                 <form action="/index/book_decrement/" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{book.id}}" />
-                    <input class="count-input" type="submit" value="Уменьшить кол-во" />
+                    <input class="mt-1 mb-1" type="submit" value="Уменьшить кол-во" />
                 </form>
             </td>
         </tr>

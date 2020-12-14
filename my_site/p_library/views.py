@@ -109,3 +109,10 @@ def books_authors_create_many(request):
                     'book_formset': book_formset,
             }
     )
+
+
+def borrowed_books(request):
+    template = loader.get_template("borrowed_books.html")
+    borrowed_books = Book.objects.filter(borrower__isnull=False)
+    books_data = {"books": borrowed_books}
+    return HttpResponse(template.render(books_data))
