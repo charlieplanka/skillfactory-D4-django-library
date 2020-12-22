@@ -18,6 +18,7 @@
                 {% block nav-lib %}<a class="nav-item nav-link" href="{% url 'library' %}">Библиотека</a>{% endblock %}
                 {% block nav-pub %}<a class="nav-item nav-link" href="{% url 'publishers' %}">Издательства</a>{% endblock %}
                 {% block nav-borrowed %}<a class="nav-item nav-link" href="{% url 'borrowed_books' %}">Книги у друзей</a>{% endblock %}
+                {% block nav-add-book %}<a class="nav-item nav-link" href="{% url 'add_book' %}">Добавить книгу</a>{% endblock %}                
             </div>
         </nav>
         {% endblock %}

@@ -25,4 +25,5 @@ urlpatterns = [
     path("index/book_decrement/", views.book_decrement),
     path("publishers/", views.publishers, name="publishers"),
     path("borrowed_books", views.borrowed_books, name="borrowed_books"),
+    path("add_book", views.add_book, name="add_book")
 ]

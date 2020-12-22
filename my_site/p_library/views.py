@@ -86,6 +86,11 @@ def author_create_many(request):
     return render(request, 'manage_authors.html', {'author_formset': author_formset})
 
 
+def add_book(request):
+    book_form = BookForm()
+    return render(request, 'add_book.html', {'form': book_form})
+
+
 def books_authors_create_many(request):
     AuthorFormSet = formset_factory(AuthorForm, extra=2)
     BookFormSet = formset_factory(BookForm, extra=2)

@@ -10,6 +10,7 @@ class AuthorForm(forms.ModelForm):
 
 
 class BookForm(forms.ModelForm):
+    title = forms.CharField(widget=forms.TextInput)
     class Meta:
         model = Book
         fields = "__all__"
