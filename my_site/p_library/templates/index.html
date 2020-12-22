@@ -1,22 +1,20 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <p>Добро пожаловать! Это моя {{ title }}. <br>
-    Здесь собрано {{ books|length }} книг из моей личной коллекции.</p>   
+{% block nav-lib %}<a class="nav-item nav-link active text-uppercase" href="">Библиотека</a>{% endblock %}
+
+{% block content %}
+    <h5 class="mb-3">В моей библиотеке {{ books|length }} книг:</h5>   
     <table class="table table-striped table-bordered">
         {% for book in books %}
         <tr>
             <th>{{ forloop.counter }}</td>
+            <td>
+                {% if book.cover %}
+                    <img src="/media/{{ book.cover }}" width=110 height=180>
+                {% else %}
+                    <span>Нет обложки</span>
+                {% endif %}
+            </td>
             <td>{{ book.title }}</td>
             <td>{{ book.ISBN }}</td>
             <td>{{ book.description }}</td>
@@ -40,6 +38,5 @@
         </tr>
         {% endfor %}
     </table>
-</body>
-</html>
+{% endblock %}
 

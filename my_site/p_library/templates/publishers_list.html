@@ -1,18 +1,10 @@
+{% extends "base.html" %}
 {% load pub_books %}
-{% load static %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publishers</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <p>В моей коллекции собраны книги следующих издательств:</p>    
+{% block nav-pub %}<a class="nav-item nav-link active text-uppercase" href="">Издательства</a>{% endblock %}
+
+{% block content %}
+    <h5 class="mb-3">В моей библиотеке собраны книги следующих издательств:</h5>    
     <ul class="list-group">
         {% for pub in publishers %}
         <li class="list-group-item">
@@ -27,7 +19,6 @@
         </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
 
 

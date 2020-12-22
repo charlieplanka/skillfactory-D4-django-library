@@ -34,6 +34,7 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=100, decimal_places=2, default=0.00)
     publisher = models.ForeignKey(Publisher, related_name="books", on_delete=models.SET_NULL, null=True, blank=True)
     borrower = models.ForeignKey(Friend, related_name="borrowed_books", on_delete=models.SET_NULL, null=True, blank=True)
+    cover = models.ImageField(upload_to='book_covers', blank=True)
 
     def __str__(self):
         return self.title
