@@ -3,7 +3,7 @@
 {% block nav-add-authors-list %}<a class="nav-item nav-link active" href="">Авторы</a>{% endblock %}
 
 {% block content %}
-    <h5 class="mb-3">В моей библиотеке есть книги следующих авторов:</h5>
+    <h5 class="mb-3">В моей библиотеке собраны книги следующих авторов:</h5>
     <ul>
         {% for author in object_list %}
             <li>{{ author.full_name }}</li>

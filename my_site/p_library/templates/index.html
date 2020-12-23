@@ -5,6 +5,18 @@
 {% block content %}
     <h5 class="mb-3">В моей библиотеке {{ books|length }} книг:</h5>   
     <table class="table table-striped table-bordered">
+        <thead>
+            <th></th>
+            <th>Обложка</th>
+            <th>Название</th>
+            <th>ISBN</th>
+            <th>Описание</th>
+            <th>Издательство</th>
+            <th>Год</th>
+            <th>Автор</th>
+            <th>Страна</th>
+            <th>Количество</th>
+        </thead>
         {% for book in books %}
         <tr>
             <th>{{ forloop.counter }}</td>
@@ -22,18 +34,18 @@
             <td>{{ book.year_release }}</td>
             <td>{{ book.author.full_name }}</td>
             <td>{{ book.author.country }}</td>
-            <td>{{ book.copy_count }}</td>
-            <td>
-                <form action="/index/book_increment/" method="post" enctype="multipart/form-data">
+            <td class="d-flex justify-content-between align-items-center border-0">    
+                <form action="/library/book_decrement/" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{book.id}}" />
-                    <input class="mt-1 mb-1" type="submit" value="Увеличить кол-во" />
+                    <input class="mt-1 mb-1" type="submit" value="-" />
                 </form>
-                <form action="/index/book_decrement/" method="post" enctype="multipart/form-data">
+                <span>{{ book.copy_count }}</span>
+                <form action="/library/book_increment/" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{book.id}}" />
-                    <input class="mt-1 mb-1" type="submit" value="Уменьшить кол-во" />
-                </form>
+                    <input class="mt-1 mb-1" type="submit" value="+" />
+                </form>                              
             </td>
         </tr>
         {% endfor %}

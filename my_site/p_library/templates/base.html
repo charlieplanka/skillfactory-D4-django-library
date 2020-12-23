@@ -17,12 +17,12 @@
         {% block nav %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3 justify-content-center">
             <div class="navbar-nav">
-                {% block nav-lib %}<a class="nav-item nav-link" href="{% url 'library' %}">Библиотека</a>{% endblock %}
+                {% block nav-lib %}<a class="nav-item nav-link" href="{% url 'p_library:library' %}">Библиотека</a>{% endblock %}
                 {% block nav-add-authors-list %}<a class="nav-item nav-link" href="{% url 'p_library:authors_list' %}">Авторы</a>{% endblock %}
-                {% block nav-pub %}<a class="nav-item nav-link" href="{% url 'publishers' %}">Издательства</a>{% endblock %}
-                {% block nav-borrowed %}<a class="nav-item nav-link" href="{% url 'borrowed_books' %}">Книги у друзей</a>{% endblock %}
-                {% block nav-add-book %}<a class="nav-item nav-link" href="{% url 'add_book' %}">Добавить книгу</a>{% endblock %}
-                {% block nav-add-author %}<a class="nav-item nav-link" href="{% url 'add_author' %}">Добавить автора</a>{% endblock %}
+                {% block nav-pub %}<a class="nav-item nav-link" href="{% url 'p_library:publishers' %}">Издательства</a>{% endblock %}
+                {% block nav-borrowed %}<a class="nav-item nav-link" href="{% url 'p_library:borrowed_books' %}">Книги у друзей</a>{% endblock %}
+                {% block nav-add-book %}<a class="nav-item nav-link" href="{% url 'p_library:add_book' %}">Добавить книгу</a>{% endblock %}
+                {% block nav-add-author %}<a class="nav-item nav-link" href="{% url 'p_library:add_author' %}">Добавить автора</a>{% endblock %}
             </div>
         </nav>
         {% endblock %}
