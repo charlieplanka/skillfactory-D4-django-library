@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/add_book.css' %}">{% endblock %}
 
 {% block nav-add-book %}<a class="nav-item nav-link active" href="">Добавить книгу</a>{% endblock %}
 
@@ -6,7 +10,7 @@
     <h5 class="mb-3">Добавить новую книгу в библиотеку</h5>
     <form method="POST" class="post-form">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}
