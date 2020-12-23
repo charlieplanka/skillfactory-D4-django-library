@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authors</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block nav-add-authors-list %}<a class="nav-item nav-link active" href="">Авторы</a>{% endblock %}
+
+{% block content %}
+    <h5 class="mb-3">В моей библиотеке есть книги следующих авторов:</h5>
     <ul>
         {% for author in object_list %}
-        <li>{{ author.full_name }}</li>
+            <li>{{ author.full_name }}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

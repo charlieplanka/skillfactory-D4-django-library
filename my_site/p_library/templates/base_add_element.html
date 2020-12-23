@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/add_element.css' %}">{% endblock %}
+
+{% block content %}
+    {% block form-header %}{% endblock %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

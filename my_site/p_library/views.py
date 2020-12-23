@@ -91,7 +91,7 @@ def add_author(request):
         author_form = AuthorForm(request.POST)
         if author_form.is_valid():
             author_form.save()
-            return redirect("library")
+            return redirect("p_library:authors_list")
     else:
         author_form = AuthorForm()
         return render(request, 'add_author.html', {'form': author_form})

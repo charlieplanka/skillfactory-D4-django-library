@@ -1,17 +1,4 @@
-{% extends "base.html" %}
-{% load crispy_forms_tags %}
-{% load static %}
-
-{% block custom-css %}
-<link rel="stylesheet" href="{% static 'css/add_element.css' %}">{% endblock %}
+{% extends "base_add_element.html" %}
 
 {% block nav-add-author %}<a class="nav-item nav-link active" href="">Добавить автора</a>{% endblock %}
-
-{% block content %}
-<h5 class="mb-3">Добавить автора в библиотеку</h5>
-<form method="POST" class="post-form">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="save btn btn-default">Save</button>
-</form>
-{% endblock %}
+{% block form-header %}<h5 class="mb-3">Добавить автора в библиотеку</h5>{% endblock %}
