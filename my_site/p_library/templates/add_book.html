@@ -2,12 +2,12 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block custom-css %}<link rel="stylesheet" href="{% static 'css/add_book.css' %}">{% endblock %}
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/add_element.css' %}">{% endblock %}
 
 {% block nav-add-book %}<a class="nav-item nav-link active" href="">Добавить книгу</a>{% endblock %}
 
 {% block content %}
-    <h5 class="mb-3">Добавить новую книгу в библиотеку</h5>
+    <h5 class="mb-3">Добавить книгу в библиотеку</h5>
     <form method="POST" class="post-form">
         {% csrf_token %}
         {{ form|crispy }}

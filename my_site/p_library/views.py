@@ -86,9 +86,26 @@ def author_create_many(request):
     return render(request, 'manage_authors.html', {'author_formset': author_formset})
 
 
+def add_author(request):
+    if request.method == "POST":
+        author_form = AuthorForm(request.POST)
+        if author_form.is_valid():
+            author_form.save()
+            return redirect("library")
+    else:
+        author_form = AuthorForm()
+        return render(request, 'add_author.html', {'form': author_form})
+
+
 def add_book(request):
-    book_form = BookForm()
-    return render(request, 'add_book.html', {'form': book_form})
+    if request.method == "POST":
+        book_form = BookForm(request.POST)
+        if book_form.is_valid():
+            book_form.save()
+            return redirect("library")
+    else:
+        book_form = BookForm()
+        return render(request, 'add_book.html', {'form': book_form})
 
 
 def books_authors_create_many(request):
