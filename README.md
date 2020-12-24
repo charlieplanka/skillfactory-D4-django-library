@@ -58,7 +58,8 @@ python manage.py createsuperuser
   
 Каждую книгу можно связать с автором, издательством (необязательное поле) и другом (необязательное поле), который её одолжил. На странице каждого издательства отображаются связанные книги, на странице друга — книги, которые он одолжил.
 
-### Как развернуть (на Windows)
+### Как развернуть 
+#### Windows
 Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
 ```
 git clone https://github.com/charlieplanka/skillfactory-D4-django-library.git
@@ -70,6 +71,25 @@ virtualenv library
 .\library\Scripts\activate
 pip install -r requirements.txt
 ```
+Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
+```
+cd .\my_site\
+python manage.py runserver
+```
+
+#### Linux
+Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
+```
+git clone https://github.com/charlieplanka/skillfactory-D4-django-library.git
+cd skillfactory-D4-django-library
+python3 -m venv library
+```
+Активируйте окружение и установите зависимости:
+```
+source library/bin/activate
+pip install -r requirements.txt
+```
+
 Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
 ```
 cd .\my_site\
