@@ -1,7 +1,15 @@
 ## Приложение на Django для работы с базой книг
 
-Перед запуском приложения установите зависимости:
+#### Как развернуть
+Склонируйте репозиторий и создайте виртуальное окружение:
 ```
+git clone https://github.com/charlieplanka/skillfactory-D4-django-library.git
+virtualenv library
+```
+Активируйте окружение и установите зависимости:
+```
+cd library
+./Scripts/activate
 pip install -r requirements.txt
 ```
 
