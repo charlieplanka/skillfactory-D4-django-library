@@ -60,37 +60,46 @@ python manage.py createsuperuser
 
 ### Как развернуть 
 #### Windows
-Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
+1. Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
 ```
 git clone https://github.com/charlieplanka/skillfactory-D4-django-library.git
 cd skillfactory-D4-django-library
 virtualenv library
 ```
-Активируйте окружение и установите зависимости:
+2. Активируйте окружение и установите зависимости:
 ```
 .\library\Scripts\activate
 pip install -r requirements.txt
 ```
-Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
+3. Сгенерируйте секретный ключ на [Djecrety](https://djecrety.ir/).
+4. Создайте файл .env рядом с файлом settings.py и запишите в него значение ключа (без кавычек и пробелов):
+```
+Echo 'SECRET_KEY=0#*rrb+!hpo_e=bt(5w=e3(r=yige=)z$-7eccj*3z$0#4zoec' > ".\my_site\my_site\.env"
+```
+5. Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
 ```
 cd .\my_site\
 python manage.py runserver
 ```
 
 #### Linux
-Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
+1. Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
 ```
 git clone https://github.com/charlieplanka/skillfactory-D4-django-library.git
 cd skillfactory-D4-django-library
 python3 -m venv library
 ```
-Активируйте окружение и установите зависимости:
+2. Активируйте окружение и установите зависимости:
 ```
 source library/bin/activate
 pip install -r requirements.txt
 ```
-
-Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
+3. Сгенерируйте секретный ключ на [Djecrety](https://djecrety.ir/).
+4. Создайте файл .env рядом с файлом settings.py и запишите в него значение ключа (без кавычек и пробелов):
+```
+echo 'SECRET_KEY=0#*rrb+!hpo_e=bt(5w=e3(r=yige=)z$-7eccj*3z$0#4zoec' > my_site\my_site\.env
+```
+5. Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
 ```
 cd .\my_site\
 python manage.py runserver
