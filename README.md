@@ -60,20 +60,26 @@ python manage.py createsuperuser
 
 ### Как развернуть 
 #### Windows
-Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
+1. Склонируйте репозиторий и создайте внутри папки виртуальное окружение:
 ```
 git clone https://github.com/charlieplanka/skillfactory-D4-django-library.git
 cd skillfactory-D4-django-library
 virtualenv library
 ```
-Активируйте окружение и установите зависимости:
+2. Активируйте окружение и установите зависимости:
 ```
 .\library\Scripts\activate
 pip install -r requirements.txt
 ```
-Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
+3. Сгенерируйте секретный ключ на [Djecrety](https://djecrety.ir/).
+4. Создайте файл .env рядом с файлом settings.py и запишите в него значение ключа:
 ```
-cd .\my_site\
+cd .\my_site\my_site
+Echo 'SECRET_KEY=0#*rrb+!hpo_e=bt(5w=e3(r=yige=)z$-7eccj*3z$0#4zoec' > ".env"
+```
+5. Вернитесь на уровень выше (в папку с файлом manage.py) и запустите сервер (по умолчанию поднимется на 8000 порту):
+```
+cd ..
 python manage.py runserver
 ```
 
