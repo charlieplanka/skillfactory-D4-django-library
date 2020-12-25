@@ -76,9 +76,9 @@ pip install -r requirements.txt
 ```
 Echo 'SECRET_KEY=0#*rrb+!hpo_e=bt(5w=e3(r=yige=)z$-7eccj*3z$0#4zoec' > ".\my_site\my_site\.env"
 ```
-5. Вернитесь на уровень выше (в папку с файлом manage.py) и запустите сервер (по умолчанию поднимется на 8000 порту):
+5. Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
 ```
-cd ..
+cd .\my_site\
 python manage.py runserver
 ```
 
