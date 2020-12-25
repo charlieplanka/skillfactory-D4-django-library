@@ -89,7 +89,7 @@ def add_book(request):
         book_form = BookForm(request.POST)
         if book_form.is_valid():
             book_form.save()
-            return redirect("library")
+            return redirect("p_library:library")
     else:
         book_form = BookForm()
         return render(request, 'add_book.html', {'form': book_form})
