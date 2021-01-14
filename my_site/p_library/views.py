@@ -1,12 +1,11 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from django.http.response import HttpResponseRedirect
 from django.template import loader
 from django.views.generic import CreateView, ListView
 from django.urls import reverse_lazy
-from django.forms import formset_factory
 from p_library.models import Book, Publisher, Author
 from p_library.forms import AuthorForm, BookForm
+from allauth.socialaccount.models import SocialAccount
 
 
 class AuthorEdit(CreateView):
@@ -28,6 +27,12 @@ def library(request):
         "title": "библиотека",
         "books": books
         }
+    if request.user.is_authenticated:
+        library_data["username"] = request.user.username
+        try:
+            library_data['github_url'] = SocialAccount.objects.get(provider='github', user=request.user).extra_data['html_url']
+        except SocialAccount.DoesNotExist:
+            pass
     return HttpResponse(template.render(library_data, request))
 
 

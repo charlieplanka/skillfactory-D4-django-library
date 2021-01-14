@@ -2,6 +2,25 @@
 
 {% block nav-lib %}<a class="nav-item nav-link active text-uppercase" href="">Библиотека</a>{% endblock %}
 
+{% block login %}
+    <div class="align-self-end login d-flex flex-column">
+        {% if not username %}
+        <a href="{% url 'p_library:login' %}" class="btn btn-outline-primary">Войти на сайт</a>
+        {% else %}
+            {% if not github_url %}
+                <p class="text-right greeting">
+                    Привет, <strong>{{ username }}</strong>!
+                </p>
+            {% else %}
+                <p class="text-right greeting">
+                    Привет, <a href="{{ github_url }}" target="_blank"><strong>{{ username }}</strong></a>!
+                </p>
+            {% endif %}
+            <a href="{% url 'p_library:logout' %}" class="align-self-end">Выйти</a>
+        {% endif %}
+    </div>
+{% endblock %}
+
 {% block content %}
     <h5 class="mb-3">В моей библиотеке {{ books|length }} книг:</h5>   
     <table class="table table-striped table-bordered">

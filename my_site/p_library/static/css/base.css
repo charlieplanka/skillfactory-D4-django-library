@@ -5,3 +5,11 @@ main {
 nav a {
     text-transform: uppercase;
 }
+
+.login {
+    margin-right: 150px;
+}
+
+.greeting {
+    margin-bottom: 0;
+}

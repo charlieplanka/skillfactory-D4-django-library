@@ -3,6 +3,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from .views import AuthorList, add_book, add_author, publishers, borrowed_books, library, book_increment, book_decrement
+from allauth.account.views import login, logout
 
 app_name = "p_library"
 urlpatterns = [
@@ -14,6 +15,8 @@ urlpatterns = [
     path("", library, name="library"),
     path("library/book_increment/", book_increment),
     path("library/book_decrement/", book_decrement),
+    path('login/', login, name='login'),
+    path('logout/', logout, name='logout'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
