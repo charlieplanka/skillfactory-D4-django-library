@@ -155,3 +155,5 @@ LOGIN_REDIRECT_URL = reverse_lazy('p_library:library')
 LOGOUT_REDIRECT_URL = reverse_lazy('p_library:library')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
