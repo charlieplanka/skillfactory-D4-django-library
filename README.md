@@ -72,7 +72,7 @@ virtualenv library
 pip install -r requirements.txt
 ```
 3. Сгенерируйте секретный ключ на [Djecrety](https://djecrety.ir/).
-4. Создайте файл .env рядом с файлом settings.py и запишите в него значение ключа (без кавычек и пробелов):
+4. Создайте файл .env рядом с файлом settings.py и запишите в него значение ключа:
 ```
 Echo 'SECRET_KEY=0#*rrb+!hpo_e=bt(5w=e3(r=yige=)z$-7eccj*3z$0#4zoec' > ".\my_site\my_site\.env"
 ```
@@ -95,12 +95,12 @@ source library/bin/activate
 pip install -r requirements.txt
 ```
 3. Сгенерируйте секретный ключ на [Djecrety](https://djecrety.ir/).
-4. Создайте файл .env рядом с файлом settings.py и запишите в него значение ключа (без кавычек и пробелов):
+4. Создайте файл `.env` в каталоге `my_site/my_site/` и запишите в него значение **сгенерированного** ключа:
 ```
-echo 'SECRET_KEY=0#*rrb+!hpo_e=bt(5w=e3(r=yige=)z$-7eccj*3z$0#4zoec' > my_site\my_site\.env
+echo 'SECRET_KEY=0#*rrb+!hpo_e=bt(5w=e3(r=yige=)z$-7eccj*3z$0#4zoec' > my_site/my_site/.env
 ```
 5. Перейдите в папку с приложением и запустите сервер (по умолчанию поднимется на 8000 порту):
 ```
-cd .\my_site\
+cd my_site
 python manage.py runserver
 ```
